@@ -7,6 +7,7 @@ import LineText from './components/LineText';
 import Banner from "./assets/images/banner.png";
 import { useState } from 'react';
 import AgeSelection from './components/AgeSelection';
+import FormComp from './components/FormComp';
 
 
 function App() {
@@ -27,7 +28,9 @@ function App() {
         </div>
       </div>
        <CommonModal
-       ModalBody={<AgeSelection/>}
+       bodyClass={"bodyModals"}
+       className={"StartModals"}
+       ModalBody={<FormComp/>}
        modalHeading={"GETTING STARTED"}
        handleClose={handleClose}
        show={show}

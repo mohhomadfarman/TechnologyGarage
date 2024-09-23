@@ -1,21 +1,36 @@
-import React from 'react';
-import { Form, Button, Row, Col } from 'react-bootstrap';
+import React from "react";
 
-const GarageFinder = () => {
+const GarageFinder = ({ count, ChangeForm }) => {
   return (
-    <div className="my-4">
-      <h3>Finding Nearest Garage</h3>
-      <Form>
-        <Form.Group as={Row}>
-          <Col sm="8">
-            <Form.Control type="text" placeholder="City, area name, zip code..." />
-          </Col>
-          <Col sm="4">
-            <Button variant="primary">Use My Location</Button>
-          </Col>
-        </Form.Group>
-      </Form>
-    </div>
+    count === 2 && (
+      <div
+        className={`container `}
+        style={{ background: "#eaeaea", maxHeight: 600 }}
+      >
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-12">
+            <div class="perent-bg">
+              <div class="use_my_location">
+                <a href="#">Use My Location </a>
+                <i class="bi bi-geo-alt"></i>
+              </div>
+              <form class="d-flex mb-5 mt-4 align-items-center" role="search">
+                <input
+                  class="form-control  my-search-bar"
+                  type="search"
+                  placeholder="City, area name, zip code..."
+                  aria-label="Search"
+                />
+              </form>
+              <div class="map">
+                <a href="#">Map </a>
+                <i class="bi bi-map"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
   );
 };
 
