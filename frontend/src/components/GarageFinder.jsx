@@ -29,6 +29,7 @@ const GarageFinder = ({ count, ChangeForm }) => {
             </div>
           </div>
         </div>
+        <button onClick={()=>ChangeForm(3)}>Next</button>
       </div>
     )
   );
