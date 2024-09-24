@@ -1,19 +1,11 @@
 import React, { useState } from "react";
-import CommonModal from "./CommonModal";
 import { garageData } from './garageData';
 
 
 function GetLocations({ count, ChangeForm, close }) {
-  const [show, setShow] = useState(false);
-  const [id, setId] = useState(null);
-
-  const handleClose = () => {
-    setShow(false);
-  };
 
   const handleShow = (garageId) => {
-    close();
-
+    ChangeForm(4)
   };
 
   return (
@@ -82,7 +74,7 @@ function GetLocations({ count, ChangeForm, close }) {
                       <h3 className="m-0">Other nearby Garage</h3>
                     </div>
                   </div>
-
+                  <div className="card-Scrolls">
                   {garageData.firstMeet.garages.map((garage) => (
                     <div key={garage.id} className="p-3 card-energy" style={{ borderBottom: "1px solid black" }}>
                       <div className="technology-garage align-items-center">
@@ -104,6 +96,7 @@ function GetLocations({ count, ChangeForm, close }) {
                       </div>
                     </div>
                   ))}
+                  </div> 
                 </div>
               </div>
 
@@ -121,16 +114,6 @@ function GetLocations({ count, ChangeForm, close }) {
             </div>
           </div>
         </section>
-
-        <CommonModal
-          bodyClass="bodyModals"
-          className="StartModals"
-          ModalBody={"Please choose your nearest garage"}
-          modalHeading="FINDING NEAREST GARAGE"
-          handleClose={handleClose}
-          show={show}
-          size="xl"
-        />
       </>
     )
   );

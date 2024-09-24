@@ -1,39 +1,19 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from './components/Header';
-import CommonModal from './components/CommonModal';
-import LineText from './components/LineText';
-import Banner from './assets/images/banner.png';
-import { useState } from 'react';
-import FormComp from './components/FormComp';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './Pages/Home';
 function App() {
-  const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   return (
-    <div className="root">
-      <Header />
-      <LineText onPress={handleShow} />
-      <div className="container-fluid mt-5">
-        <div className="row">
-          <div className="col-12 p-0">
-            <img src={Banner} className="img-fluid" alt="Banner" />
-          </div>
-        </div>
-      </div>
-      <CommonModal
-        bodyClass="bodyModals"
-        className="StartModals"
-        ModalBody={<FormComp modaleClose={handleClose} />}
-        modalHeading="GETTING STARTED"
-        handleClose={handleClose}
-        show={show}
-        size="xl"
-      />
-    </div>
+      <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/s" element={<Home />} /> */}
+        {/* <Route path="/about" element={<About />} /> */}
+        {/* <Route path="/contact" element={<Contact />} /> */}
+      </Routes>
+    </Router>
   );
 }
 

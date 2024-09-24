@@ -349,7 +349,7 @@ h1{
 .selected-garage h3{
  color: #000;
  font-size:18px;
- font-weight: 400;
+ font-weight: 500;
  text-align: center;
  margin-bottom: 50px;
 }
@@ -403,6 +403,7 @@ h1{
  cursor: pointer;
  z-index: 2;
  opacity: 0;
+ left: 0;
 
 }
 
@@ -419,7 +420,7 @@ h1{
 
 .radio-title-group.time-slot .input-container .radio-title{
  color: #000;
- background: #fff;
+ background: transparent;
  
 }
 
